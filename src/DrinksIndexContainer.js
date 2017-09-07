@@ -53,10 +53,10 @@ class DrinksIndexContainer extends Component {
           <h1>What's In Your Cabinet?</h1>
           <input type="button" onClick={this.handleClick} value="Get a Random Drink!"/>
           <h3>{title}</h3>
-          <h5>{category}</h5>
-          <h5>{glass}</h5>
+          <h5>Category: {category}</h5>
+          <h5>Glass: {glass}</h5>
           <p>{instructions}</p>
-          <img src={image} alt={title}/>
+          <img className="drinkPic" src={image} alt={title}/>
         </div>
       )
   }
