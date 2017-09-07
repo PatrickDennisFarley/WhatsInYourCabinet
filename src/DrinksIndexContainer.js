@@ -48,6 +48,7 @@ class DrinksIndexContainer extends Component {
     let glass = this.state.glass;
     let instructions = this.state.instructions;
     let image = this.state.image;
+    
       return(
         <div>
           <h1>What's In Your Cabinet?</h1>
