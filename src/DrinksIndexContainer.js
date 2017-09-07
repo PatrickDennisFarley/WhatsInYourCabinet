@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'react-bootstrap';
 
 class DrinksIndexContainer extends Component {
   constructor(props) {
@@ -51,7 +52,7 @@ class DrinksIndexContainer extends Component {
       return(
         <div>
           <h1>What's In Your Cabinet?</h1>
-          <input type="button" onClick={this.handleClick} value="Get a Random Drink!"/>
+          <Button bsStyle='primary' onClick={this.handleClick}>Get a Random Drink!</Button>
           <h3>{title}</h3>
           <h5>Category: {category}</h5>
           <h5>Glass: {glass}</h5>
