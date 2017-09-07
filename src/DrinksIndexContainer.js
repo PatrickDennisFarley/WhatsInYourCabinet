@@ -32,11 +32,11 @@ class DrinksIndexContainer extends Component {
     .then(response => response.json())
     .then(body => {
       this.setState({
-        title: body.drinks.strDrink,
-        category: body.drinks.strCategory,
-        glass: body.drinks.strGlass,
-        instructions: body.drinks.strInstructions,
-        image: body.drinks.strDrinkThumb
+        title: body.drinks[0].strDrink,
+        category: body.drinks[0].strCategory,
+        glass: body.drinks[0].strGlass,
+        instructions: body.drinks[0].strInstructions,
+        image: body.drinks[0].strDrinkThumb
       })
     })
   }
@@ -51,6 +51,7 @@ class DrinksIndexContainer extends Component {
       return(
         <div>
           <h1>What's In Your Cabinet?</h1>
+          <input type="button" onClick={this.handleClick} value="Get a Random Drink!"/>
           <h3>{title}</h3>
           <h5>{category}</h5>
           <h5>{glass}</h5>
