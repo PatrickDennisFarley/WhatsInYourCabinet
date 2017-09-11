@@ -1,3 +1,12 @@
+body {
+  text-align: center;
+  background-color: #ffffff;
+}
+
+img {
+  border-radius: 13px;
+}
+
 .App {
   text-align: center;
 }
@@ -16,6 +25,22 @@
 
 .App-intro {
   font-size: large;
+}
+
+.drink-div {
+  background-color: #cbf9f4;
+  outline-style: double;
+  outline-color: #3cddca;
+  color: #222;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.drink-div-instructions {
+  background-color: #ffffff;
+  outline-style: double;
+  outline-color: #1c1c1c;
+  color: #222;
 }
 
 @keyframes App-logo-spin {

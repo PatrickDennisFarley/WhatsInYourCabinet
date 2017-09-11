@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
+import './App.css';
+
 
 class DrinksIndexContainer extends Component {
   constructor(props) {
@@ -48,15 +50,17 @@ class DrinksIndexContainer extends Component {
     let glass = this.state.glass;
     let instructions = this.state.instructions;
     let image = this.state.image;
-    
+
     return(
       <div>
         <h1>What's In Your Cabinet?</h1>
         <Button bsStyle='primary' onClick={this.handleClick}>Get a Random Drink!</Button>
-        <h3>{title}</h3>
-        <h5>Category: {category}</h5>
-        <h5>Glass: {glass}</h5>
-        <p>{instructions}</p>
+        <div className='drink-div'>
+          <h3>{title}</h3>
+          <h5>Category: {category}</h5>
+          <h5>Glass: {glass}</h5>
+        </div>
+        <div className='drink-div-instructions'><h5>Instructions:</h5><p>{instructions}</p></div>
         <img className="drinkPic" src={image} alt={title}/>
       </div>
     )
