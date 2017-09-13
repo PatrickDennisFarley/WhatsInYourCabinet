@@ -154,5 +154,4 @@ class DrinksIndexContainer extends Component {
     )
   }
 }
-
 export default DrinksIndexContainer;
