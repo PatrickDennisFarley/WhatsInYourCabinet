@@ -20,7 +20,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-.byebug_history /log/*
+.byebug_history
+/log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
