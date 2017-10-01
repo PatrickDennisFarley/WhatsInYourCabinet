@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Frugal Fashion Tracker</title>
+    <%= csrf_meta_tags %>
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+  </head>
+
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class="menu-text-large">
+            What's in Your Cabinet?
+          </li>
+          <li class="menu-item-text">
+            <a href="/all_drinks">All Drinks</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="top-bar-right">
+        <ul class="menu">
+          <% if current_user %>
+          <li class="menu-item-text"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <li class="menu-item-text"><%= link_to "Edit Profile", edit_user_registration_path %></li>
+          <li class="menu-text"><%= current_user.username %></li>
+          <% if current_user.profile_photo == nil %>
+          <% current_user.profile_photo = "/uploads/user/profile_photo/75/T-Shirt-icon.png" %>
+          <% else %>
+          <%= image_tag current_user.profile_photo, :class => "profile-photo" %>
+          <% end %>
+          <% else %>
+          <li class="menu-item-text"><%= link_to "Log In", new_user_session_path, method: :get %></li>
+          <li class="menu-item-text"><%= link_to "Sign Up", new_user_registration_path, method: :get %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="header">
+      <% flash.each do |key, value| %>
+      <div class=“alert alert-<%= key %>“><%= value %></div>
+      <% end %>
+    </div>
+
+    <div class='row'>
+      <%= yield %>
+    </div>
+  </body>
+</html>
