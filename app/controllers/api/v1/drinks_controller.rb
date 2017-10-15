@@ -24,4 +24,11 @@ class Api::V1::DrinksController < ApplicationController
     end
   end
 
+
+  private
+
+  def query_params
+    params.require(:query).permit(:user_id, :body)
+  end
+
 end
