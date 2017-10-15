@@ -13,4 +13,15 @@ class Api::V1::DrinksController < ApplicationController
     render json: { drink: drink, ingredient: ingredient }, adapter: :json
   end
 
+  def create
+    data = JSON.parse(request.body.read)
+    if Drink.exists?(user_id: current_user.id, body: data["body"])
+      @drink = Drink.where(user_id: current_user.id, body: data["body"])
+      render json: @drink
+    else
+      drink = Drink.create(user_id: current_user.id, body: data["body"])
+      render json: drink
+    end
+  end
+
 end
