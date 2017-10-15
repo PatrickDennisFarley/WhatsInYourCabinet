@@ -19,5 +19,12 @@
 
 <h5>Technologies</h5>
 <ul>
+<li>Backend: Rails 5.1.2</li>
 <li>Frontend: React.js</li>
+<li>User Auth: Devise</li>
+<li>Image Uploader: CarrierWave</li>
+<li>Image Hosting: Amazon Web Services</li>
+<li>Styling: Foundation</li>
+<li>Database: Postgres</li>
+<li>Testing: RSpec, Capybara, Jasmine, Karma, Enzyme</li>
 </ul>
